@@ -14,18 +14,18 @@
                 <el-col>
                     <el-card shadow="always" :body-style="{height:'150px',padding:0,display:'flex'}"
                              v-for="goods in goodsList" @click="detail(goods.id)">
-                        <div class="aaa">
-                            <div class="bbb"></div>
+                        <div class="aaa" v-bind:style="{backgroundImage:'url(' + goods.picUrl + ')'}">
+                            <div class="bbb" v-if="goods.isHot"></div>
                         </div>
                         <div style="margin: 10px ;flex: 1; overflow: hidden">
                             <div class="title-brief">
-                                <h3> {{goods.name.substr(0,15)}}</h3>
-                                <p style="color: #979797">{{goods.brief}}</p>
+                                <h3> {{goods.name.substr(0,15)+'...'}}</h3>
+                                <p style="color: #979797">{{goods.brief.substr(0,15)+'...'}}</p>
                             </div>
                             <div class="price-buy">
-                                <span style="color: red;font-size: 25px ">￥{{goods.retailPriceDesc}}</span>
+                                <span style="color: red;font-size: 20px ">￥{{goods.retailPriceDesc}}</span>
                                 <el-button round
-                                           style="background-image: -webkit-gradient(linear, left top, right top, from(#f78160), to(#fa3f43))">
+                                           style="background-image: -webkit-gradient(linear, left top, right top, from(#f78160), to(#fa3f43));position: absolute;right: 0">
                                     购买
                                 </el-button>
                             </div>
@@ -79,7 +79,7 @@
 
     .aaa {
         margin: 10px;
-        background: url("http://chuang-saas.oss-cn-hangzhou.aliyuncs.com/upload/image/20181207/f735acdbe63748d489af8ffb1164a72a.jpg");
+        /*background: url("http://chuang-saas.oss-cn-hangzhou.aliyuncs.com/upload/image/20181207/f735acdbe63748d489af8ffb1164a72a.jpg");*/
         background-size: 100% 100%;
         width: 10rem;
         height: 90%;
@@ -109,6 +109,6 @@
     }
 
     .price-buy {
-
+        position: relative;
     }
 </style>
