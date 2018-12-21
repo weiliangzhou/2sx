@@ -1,6 +1,6 @@
 <template>
     <div>
-        web
+        页面完善中.....
     </div>
 </template>
 <script>

@@ -13,19 +13,20 @@
             <el-row>
                 <el-col>
                     <el-card shadow="always" :body-style="{height:'150px',padding:0,display:'flex'}"
-                             v-for="goods in goodsList" @click="detail(goods.id)">
-                        <div class="aaa" v-bind:style="{backgroundImage:'url(' + goods.picUrl + ')'}">
+                             v-for="goods in goodsList">
+                        <div class="aaa" v-bind:style="{backgroundImage:'url(' + goods.picUrl + ')'}"
+                             @click="detail(goods.id)">
                             <div class="bbb" v-if="goods.isHot"></div>
                         </div>
                         <div style="margin: 10px ;flex: 1; overflow: hidden">
-                            <div class="title-brief">
+                            <div class="title-brief" @click="detail(goods.id)">
                                 <h3> {{goods.name.substr(0,15)+'...'}}</h3>
                                 <p style="color: #979797">{{goods.brief.substr(0,15)+'...'}}</p>
                             </div>
                             <div class="price-buy">
-                                <span style="color: red;font-size: 20px ">￥{{goods.retailPriceDesc}}</span>
+                                <span style="color: red;font-size: 20px " @click="detail(goods.id)">￥{{goods.retailPriceDesc}}</span>
                                 <el-button round
-                                           style="background-image: -webkit-gradient(linear, left top, right top, from(#f78160), to(#fa3f43));position: absolute;right: 0">
+                                           style="background-image: -webkit-gradient(linear, left top, right top, from(#f73d05), to(#fa0a11));position: absolute;right: 0;color: white">
                                     购买
                                 </el-button>
                             </div>
