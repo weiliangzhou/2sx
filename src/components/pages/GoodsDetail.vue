@@ -1,13 +1,12 @@
 <template>
-
     <div>
-        java
+        web
     </div>
 </template>
 <script>
 
     export default {
-        name: "java",
+        name: "goodsDetail",
         data() {
             return {}
         }
