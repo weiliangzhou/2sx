@@ -9,7 +9,11 @@
         name: "goodsDetail",
         data() {
             return {}
+        },
+        mounted(){
+            // debugger;
         }
+
     }
 </script>
 <style scoped>

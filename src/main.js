@@ -5,7 +5,7 @@ import Axios from 'axios'
 import Qs from 'qs'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyLoad from 'vue-lazyload'
-import router from 'vue-router'
+import router from './router'
 
 Vue.prototype.$axios = Axios
 Vue.use(Element, {size: 'small', zIndex: 3000})
