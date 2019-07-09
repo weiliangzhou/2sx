@@ -69,6 +69,20 @@
                 })
 
         },
+        mounted() {
+            const authorization = () => {
+            let appId = 'wx3b5005d9d0c0c515'
+            let str = window.location.search.replace(/code.*?&/, "") || "?"
+            let redirectUri = window.location.origin + '/' + str;
+            let redirecturi = encodeURIComponent(redirectUri);
+            window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appId + '&redirect_uri=' + redirecturi + '&response_type=code&scope=snsapi_userinfo&state=test#wechat_redirect'
+            }
+            if(this.$route.query.code) {
+                alert("授权成功 code:" + this.$route.query.code)
+            } else { // 去授权
+                authorization()
+            }
+        },
         methods: {
             detail(data) {
                 this.$router.push({name: 'goods-detail', params: {id: data}});

@@ -18,7 +18,7 @@ Vue.use(VueLazyLoad, {
     attempt: 1
 })
 
-Axios.defaults.baseURL = 'http://tmall.xc2018.com.cn/'
+Axios.defaults.baseURL = ''
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 

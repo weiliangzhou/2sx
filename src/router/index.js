@@ -5,6 +5,7 @@ import Vue from 'vue'
 
 Vue.use(VueRouter)
 export default new VueRouter({
+    mode: "history",
     routes: [
         {path: "/index", name: "index", component: Index},
         {
